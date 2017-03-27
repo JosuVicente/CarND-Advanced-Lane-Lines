@@ -155,6 +155,7 @@ I implemented this step in cell 9 of the IPython notebook located in "./project/
 
 Here's a [link to my video result](./project_video.mp4)
 ![alt text][video1]
+<video src="https://raw.githubusercontent.com/JosuVicente/CarND-Advanced-Lane-Lines/master/video/project_video_out.mp4" width="320" height="200" controls preload></video>
 
 ---
 

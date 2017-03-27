@@ -16,12 +16,26 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/undistort_output.png "Undistorted"
-[image2]: ./test_images/test1.jpg "Road Transformed"
-[image3]: ./examples/binary_combo_example.jpg "Binary Example"
-[image4]: ./examples/warped_straight_lines.jpg "Warp Example"
-[image5]: ./examples/color_fit_lines.jpg "Fit Visual"
-[image6]: ./examples/example_output.jpg "Output"
+[image1]: img/cal.png "Calibration"
+[image2]: img/und1.png "Undistortion 1"
+[image3]: img/und2.png "Undistortion 2"
+[image4]: img/und3.png "Undistortion 3"
+[image5]: img/thre1.png "Thresolds 1"
+[image6]: img/thre2.png "Thresolds 2"
+[image7]: img/thre3.png "Thresolds 3"
+[image8]: img/warp.png "Warped image"
+[image9]: img/warp1.png "Warped 1"
+[image10]: img/warp2.png "Warped 2"
+[image11]: img/warp3.png "Warped 3"
+[image12]: img/hist1.png "Histogram 1"
+[image13]: img/hist2.png "Histogram 2"
+[image14]: img/hist3.png "Histogram 3"
+[image15]: img/lane1.png "Lane finding 1"
+[image16]: img/lane2.png "Lane finding 2"
+[image17]: img/lane3.png "Lane finding 3"
+[image18]: img/lanes1.png "Lanes in image 1"
+[image19]: img/lanes2.png "Lanes in image 2"
+[image20]: img/lanes3.png "Lanes in image 3"
 [video1]: ./project_video.mp4 "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
@@ -33,11 +47,14 @@ The goals / steps of this project are the following:
 ####1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  You can submit your writeup as markdown or pdf.  [Here](https://github.com/JosuVicente/CarND-Advanced-Lane-Lines/edit/master/writeup_template.md) is a template writeup for this project you can use as a guide and a starting point.  
 
 You're reading it!
+
+Note that I use two notebooks. "./project/P4 - final.ipynb" has the code for the project and "./project/P4 - visualizations.ipynb" has similar code but it includes visualizations of each step. When I explain each step it will relate to the first notebook but I´ll include images from the second one.
+
 ###Camera Calibration
 
 ####1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
-The code for this step is contained in the first code cell of the IPython notebook located in "./examples/example.ipynb" (or in lines # through # of the file called `some_file.py`).  
+The code for the calibration is contained in the second code cell of the IPython notebook located in "./project/P4 - final.ipynb". The code for the undistortion is located on third cell of the same notebook.
 
 I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, `objp` is just a replicated array of coordinates, and `objpoints` will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  `imgpoints` will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection.  
 
@@ -48,12 +65,17 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 ###Pipeline (single images)
 
 ####1. Provide an example of a distortion-corrected image.
-To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
+To demonstrate this step, I will show three examples of images and how they look after applying undistortion:
 ![alt text][image2]
+![alt text][image3]
+![alt text][image4]
+
 ####2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
 
-![alt text][image3]
+![alt text][image5]
+![alt text][image6]
+![alt text][image7]
 
 ####3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 

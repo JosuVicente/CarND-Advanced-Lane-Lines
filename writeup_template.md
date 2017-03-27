@@ -161,5 +161,6 @@ Here's a [link to my video result](https://raw.githubusercontent.com/JosuVicente
 
 ####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+Since the points used for warping the image are hardcoded a video with different image size will likely fail so a way to improve it is calculate those points dynamically. Also as I tested my solution on the challenge videos I can see that the thresolds I use to get the binary image might not be the best. I way to improve it is find some thresolds that will find white and yellow lines and that are not affected by shadows or other lines that are not part of the lane borders.
+The project should also be improved to be able to recognize wrong lanes when fitting the polynomial and use previously found lanes in order to smooth it.
 
